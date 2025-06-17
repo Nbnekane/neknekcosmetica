@@ -1,0 +1,71 @@
+/* styles.css para NekNek - Belleza a tu manera */
+
+/* 1. Variables de color base (puedes ajustar según tu paleta) */
+:root {
+  --color-principal: #ec4899; /* Tailwind pink-500 */
+  --color-principal-hover: #db2777; /* Tailwind pink-600 */
+  --color-fondo-claro: #fdf2f8; /* Tailwind pink-50 */
+  --color-texto: #374151; /* Tailwind gray-700 */
+}
+
+/* 2. Reglas generales */
+body {
+  scroll-behavior: smooth;
+}
+
+/* 3. Imágenes responsivas por defecto */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4. Botón principal reutilizable */
+.btn-principal {
+  background-color: var(--color-principal);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-principal:hover {
+  background-color: var(--color-principal-hover);
+}
+
+/* 5. Estilo para secciones destacadas */
+.seccion {
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .seccion {
+    padding: 4rem 5rem;
+  }
+}
+
+/* 6. Accesibilidad: Enlaces enfocados */
+a:focus {
+  outline: 2px dashed var(--color-principal);
+  outline-offset: 4px;
+}
+
+/* 7. Selector de idioma */
+select {
+  appearance: none;
+  background: white url("data:image/svg+xml,%3Csvg fill='%23374351' viewBox='0 0 20 20'%3E%3Cpath d='M5.23 7.21a.75.75 0 011.06.02L10 11.19l3.71-3.96a.75.75 0 111.08 1.04l-4.25 4.53a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z' /%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2rem;
+}
+
+/* 8. Pie de página */
+footer a {
+  color: var(--color-texto);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
