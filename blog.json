@@ -1,0 +1,66 @@
+{
+  "articulos": [
+    {
+      "id": "001",
+      "titulo": {
+        "es": "Rutinas de cuidado facial para cada edad",
+        "eu": "Aurpegiaren zaintzarako errutinak adinaren arabera"
+      },
+      "resumen": {
+        "es": "Cómo adaptar tus hábitos de limpieza e hidratación desde los 20 hasta los 60.",
+        "eu": "Nola egokitu zure garbiketa eta hidratazio ohiturak 20 urtetik 60ra bitartean."
+      },
+      "imagen": "https://source.unsplash.com/featured/?skincare",
+      "url": "articulo-rutinas-cuidado-facial.html",
+      "fecha": "2025-06-01",
+      "categoria": "cuidado-personal",
+      "idioma": ["es", "eu"],
+      "destacado": true
+    },
+    {
+      "id": "002",
+      "titulo": {
+        "es": "Maquillaje sin reglas: menos es más",
+        "eu": "Makillajea araurik gabe: gutxiago, gehiago da"
+      },
+      "resumen": {
+        "es": "Explora cómo expresarte con maquillaje sin seguir tendencias impuestas.",
+        "eu": "Adierazi zaitez zure estiloarekin, joera inposaturik gabe."
+      },
+      "imagen": "https://source.unsplash.com/featured/?naturalmakeup",
+      "url": "articulo-maquillaje-sin-reglas.html",
+      "fecha": "2025-06-05",
+      "categoria": "maquillaje",
+      "idioma": ["es", "eu"],
+      "destacado": false
+    },
+    {
+      "id": "003",
+      "titulo": {
+        "es": "Belleza emocional y autoestima",
+        "eu": "Edertasun emozionala eta autoestimua"
+      },
+      "resumen": {
+        "es": "La relación entre tu imagen personal y cómo te sientes contigo misma.",
+        "eu": "Zure irudiarekiko harremana eta zure buruarekiko sentimenduak."
+      },
+      "imagen": "https://source.unsplash.com/featured/?selfcare",
+      "url": "articulo-belleza-autoestima.html",
+      "fecha": "2025-06-10",
+      "categoria": "autoestima",
+      "idioma": ["es", "eu"],
+      "destacado": true
+    },
+    {
+      "id": "004",
+      "titulo": {
+        "es": "Cosmética vegana en Bilbao",
+        "eu": "Kosmetika begetarianoa Bilbon"
+      },
+      "resumen": {
+        "es": "Guía de productos cruelty-free y locales que cuidan de ti y del planeta.",
+        "eu": "Zure eta planetaren zaintzarako produktuen gida beganoa eta tokikoa."
+      },
+      "imagen": "https://source.unsplash.com/featured/?veganbeauty",
+      "url": "articulo-cosmetica-vegana.html",
+      "fe
