@@ -12,31 +12,71 @@
       font-family: 'Inter', sans-serif;
       background: #FFF8F0;
       color: #4B0082; /* morado fuerte */
+      margin: 0;
     }
     header {
       background: #6A0DAD; /* morado fuerte */
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
     }
     nav a {
       color: #FFD54F; /* mostaza fuerte */
       font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    nav a:hover {
-      color: #FF6F00; /* naranja */
+    nav a:hover, nav a:focus {
+      background-color: #FF6F00; /* naranja */
+      color: #FFF8F0;
+      outline: none;
     }
-    footer {
-      background: #FF6F00; /* naranja */
-      color: #FFF8F0; /* claro */
+    .logo {
+      position: absolute;
+      left: 2rem;
+      top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FFD54F;
+      font-weight: 700;
+      font-size: 1.8rem;
+      user-select: none;
     }
+    .logo img {
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+    }
+    /* Carousel */
     .carousel-container {
       position: relative;
       overflow: hidden;
       height: 60vh;
       max-height: 450px;
+      max-width: 1200px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(255,111,0,0.3);
     }
     .carousel-slide {
       display: flex;
       transition: transform 1s ease-in-out;
       height: 100%;
+      will-change: transform;
     }
     .carousel-slide img {
       width: 100%;
@@ -53,12 +93,14 @@
       align-items: center;
       text-align: center;
       padding: 0 1rem;
+      border-radius: 12px;
     }
     .carousel-overlay h1 {
       color: #FFD54F; /* mostaza */
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       font-weight: 700;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      user-select: none;
     }
     section {
       padding: 3rem 1rem;
@@ -66,143 +108,105 @@
       margin: auto;
     }
     .section-title {
-      font-size: 2rem;
+      font-size: 2.25rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: #6A0DAD;
       text-align: center;
+      user-select: none;
     }
     .grid-2cols {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
     }
     .rounded-shadow {
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(255,111,0,0.3);
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(255,111,0,0.3);
+      user-select: none;
     }
     .btn-primary {
       background-color: #FF6F00;
       color: #FFF8F0;
-      padding: 0.75rem 2rem;
+      padding: 0.85rem 2.5rem;
       font-weight: 700;
       border-radius: 9999px;
       display: inline-block;
       text-align: center;
       transition: background-color 0.3s ease;
       cursor: pointer;
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       user-select: none;
+      border: none;
+      font-size: 1.1rem;
     }
-    .btn-primary:hover {
+    .btn-primary:hover, .btn-primary:focus {
       background-color: #6A0DAD;
+      outline: none;
+    }
+    footer {
+      background: #FF6F00;
+      color: #FFF8F0;
+      padding: 2rem 1rem;
+      user-select: none;
     }
     footer a {
       color: #FFF8F0;
       text-decoration: underline;
+      transition: color 0.3s ease;
     }
-    footer a:hover {
+    footer a:hover, footer a:focus {
       color: #FFD54F;
+      outline: none;
+    }
+    /* Extra Section: Vivir maquillaje sin modas */
+    .live-makeup {
+      background: linear-gradient(90deg, #6A0DAD 0%, #FF6F00 100%);
+      color: #FFF8F0;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-radius: 16px;
+      margin: 3rem auto;
+      max-width: 900px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(255,111,0,0.6);
+      user-select: none;
+    }
+    .live-makeup strong {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="flex flex-wrap items-center justify-between p-6">
-    <div class="flex items-center space-x-3">
-      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=48&q=80" alt="Logo NekNek" width="48" height="48" style="border-radius:50%;" />
-      <span style="color:#FFD54F; font-weight: 700; font-size: 1.5rem;">NekNek</span>
-    </div>
-    <nav class="flex flex-wrap space-x-6 text-lg font-semibold">
-      <a href="#rostro" class="nav-link">Rostro</a>
-      <a href="#cuerpo" class="nav-link">Cuerpo</a>
-      <a href="#tipos-piel" class="nav-link">Tipos de Piel</a>
-      <a href="#glosario" class="nav-link">Glosario</a>
-      <a href="#productos" class="nav-link">Productos</a>
-      <a href="#tips-belleza" class="nav-link">Tips Belleza</a>
-      <a href="#asesoramiento" class="nav-link">Asesoramiento</a>
-      <a href="#redes-sociales" class="nav-link">Redes Sociales</a>
+  <!-- Logo fuera del nav para mejor control -->
+  <div class="logo" aria-label="Logo NekNek">
+    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=48&q=80" alt="Logo NekNek" />
+    NekNek
+  </div>
+
+  <!-- HEADER con 8 pestañas centradas -->
+  <header role="banner" aria-label="Navegación principal">
+    <nav role="navigation" aria-label="Menú principal">
+      <a href="#rostro" tabindex="0">Rostro</a>
+      <a href="#cuerpo" tabindex="0">Cuerpo</a>
+      <a href="#tipos-piel" tabindex="0">Tipos de piel</a>
+      <a href="#glosario" tabindex="0">Glosario</a>
+      <a href="#productos" tabindex="0">Productos</a>
+      <a href="#tips-belleza" tabindex="0">Tips belleza</a>
+      <a href="#asesoramiento" tabindex="0">Asesoramiento</a>
+      <a href="#redes-sociales" tabindex="0">Redes sociales</a>
     </nav>
   </header>
 
-  <!-- CAROUSEL -->
-  <section class="carousel-container relative" aria-label="Carrusel de imágenes de cosmética y maquillaje">
-    <div id="carousel" class="carousel-slide">
+  <!-- CAROUSEL automático con 4 fotos -->
+  <section class="carousel-container" aria-label="Carrusel de imágenes de cosmética y maquillaje">
+    <div id="carousel" class="carousel-slide" aria-live="polite" aria-atomic="true">
       <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Maquillaje profesional sobre mesa" />
       <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Cosméticos variados sobre fondo colorido" />
       <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80" alt="Mujer aplicándose crema facial" />
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Set de maquillaje con brochas" />
-    </div>
-    <div class="carousel-overlay">
-      <h1>Belleza personalizada para todas</h1>
-    </div>
-  </section>
-
-  <script>
-    // Carousel automático simple
-    const carousel = document.getElementById('carousel');
-    let currentIndex = 0;
-    const slidesCount = carousel.children.length;
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slidesCount;
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }, 5000);
-  </script>
-
-  <!-- PRINCIPAL: Quiénes somos -->
-  <section id="nosotras" aria-labelledby="titulo-nosotras" style="background:#FFF8F0;">
-    <h2 id="titulo-nosotras" class="section-title">Quiénes somos</h2>
-    <div class="grid-2cols">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Mujeres diversas de diferentes edades y etnias sonriendo" class="rounded-shadow" />
-      <div>
-        <p>
-          En <strong>NekNek</strong> creemos que la belleza es salud, autoestima y libertad para ser tú misma. Somos un equipo de profesionales en Bilbao que ofrece asesoramiento personalizado por videollamada para toda España (excepto Islas Canarias). 
-        </p>
-        <p>
-          Nuestra cosmética está pensada para cuidar todo tipo de piel y realzar tu belleza natural, sin seguir modas pasajeras ni imposiciones. Enviamos productos directamente a tu domicilio en España peninsular para que disfrutes de un servicio cómodo y cercano.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIONES POR PESTAÑA -->
-
-  <!-- Rostro -->
-  <section id="rostro" aria-labelledby="titulo-rostro" style="background:#F3E5F5; padding-bottom: 4rem;">
-    <h2 id="titulo-rostro" class="section-title" style="color:#6A0DAD;">Cuidado del Rostro</h2>
-    <div class="grid-2cols">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Mujer aplicando crema facial" class="rounded-shadow" />
-      <div>
-        <p>Te ofrecemos productos y rutinas específicas para el cuidado del rostro, desde limpieza y exfoliación hasta hidratación y protección solar. Adaptamos cada recomendación a tu tipo de piel para maximizar resultados.</p>
-        <ul style="margin-top:1rem; list-style-type: disc; padding-left: 1.25rem; color:#4B0082;">
-          <li>Limpieza profunda sin agresión</li>
-          <li>Hidratantes y serums con activos eficaces</li>
-          <li>Protección solar diaria y maquillaje saludable</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cuerpo -->
-  <section id="cuerpo" aria-labelledby="titulo-cuerpo" style="background:#FFF3E0; padding-bottom: 4rem;">
-    <h2 id="titulo-cuerpo" class="section-title" style="color:#FF6F00;">Cuidado del Cuerpo</h2>
-    <div class="grid-2cols">
-      <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=600&q=80" alt="Mujer aplicándose crema corporal" class="rounded-shadow" />
-      <div>
-        <p>Descubre nuestros productos para el cuidado del cuerpo que hidratan, nutren y revitalizan tu piel. Desde exfoliantes suaves hasta cremas nutritivas, todo pensado para tu bienestar integral.</p>
-        <ul style="margin-top:1rem; list-style-type: disc; padding-left: 1.25rem; color:#FF6F00;">
-          <li>Exfoliantes naturales y suaves</li>
-          <li>Lociones y cremas nutritivas</li>
-          <li>Productos para zonas específicas: manos, pies y más</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tipos de piel -->
-  <section id="tipos-piel" aria-labelledby="titulo-tipos-piel" style="background:#EDE7F6; padding-bottom: 4rem;">
-    <h2 id="titulo-tipos-piel" class="section-title" style="color:#6A0DAD;">Tipos de piel</h2>
-    <p style="max-width:700px; margin:auto; margin-bottom:2rem;">
-      Conocer tu tipo de piel es clave para elegir la cosmética adecuada. En NekNek te ayudamos a identificar si tu piel es seca, grasa, mixta, sensible o madura para ofrecerte pr
+      <
