@@ -3,129 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NekNek | Belleza consciente y personalizada en Bilbao</title>
-  <meta name="description" content="Descubre NekNek: cosmética natural, vegana y cruelty free, asesoría personalizada y bienestar real. Tu espacio de belleza consciente en Bilbao.">
+  <title>NekNek | Belleza auténtica y personalizada</title>
+  <meta name="description" content="Descubre NekNek: consejos de belleza, productos para rostro y cuerpo, tipos de piel, y asesoramiento personalizado. Todo para sentirte tú misma, sin reglas ni etiquetas.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .carousel-container { position: relative; overflow: hidden; }
-    .carousel-slide { display: flex; transition: transform 1s ease-in-out; }
-    .carousel-slide img { width: 100%; height: 60vh; object-fit: cover; }
-  </style>
+  <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
-<body class="bg-pink-50 text-gray-800">
+<body class="bg-yellow-50 text-gray-800">
 
   <!-- HEADER -->
-  <header class="flex flex-wrap items-center justify-between p-4 bg-pink-200 shadow-md">
+  <header class="flex items-center justify-between p-4 bg-purple-100 shadow-md">
     <div class="flex items-center space-x-2">
       <img src="logo-placeholder.png" alt="Logo NekNek" class="h-10 w-auto">
-      <span class="text-xl font-semibold text-pink-800">NekNek</span>
+      <span class="text-xl font-semibold text-purple-700">NekNek</span>
     </div>
-    <nav class="flex flex-wrap space-x-4 text-sm text-pink-900">
-      <a href="#inicio" class="hover:text-pink-600">Inicio</a>
-      <a href="#nosotras" class="hover:text-pink-600">Nosotras</a>
-      <a href="#servicios" class="hover:text-pink-600">Servicios</a>
-      <a href="#tienda" class="hover:text-pink-600">Tienda</a>
-      <a href="#asesoria" class="hover:text-pink-600">Asesoría</a>
-      <a href="#testimonios" class="hover:text-pink-600">Testimonios</a>
-      <a href="#blog" class="hover:text-pink-600">Blog</a>
-      <a href="#contacto" class="hover:text-pink-600">Contacto</a>
+    <nav class="space-x-3 hidden md:flex text-sm text-purple-800">
+      <a href="#rostro" class="hover:text-yellow-600">Rostro</a>
+      <a href="#cuerpo" class="hover:text-yellow-600">Cuerpo</a>
+      <a href="#piel" class="hover:text-yellow-600">Tipos de piel</a>
+      <a href="#glosario" class="hover:text-yellow-600">Glosario</a>
+      <a href="#productos" class="hover:text-yellow-600">Productos</a>
+      <a href="#tips" class="hover:text-yellow-600">Tips de belleza</a>
+      <a href="#asesoria" class="hover:text-yellow-600">Asesoramiento personalizado</a>
+      <a href="#redes" class="hover:text-yellow-600">Redes Sociales</a>
     </nav>
   </header>
 
-  <!-- CAROUSEL HERO -->
-  <section id="inicio" class="carousel-container">
-    <div id="carousel" class="carousel-slide">
-      <img src="https://source.unsplash.com/featured/?natural-cosmetics" alt="Cosmética natural">
-      <img src="https://source.unsplash.com/featured/?skincare" alt="Cuidado facial">
-      <img src="https://source.unsplash.com/featured/?beauty" alt="Belleza saludable">
-      <img src="https://source.unsplash.com/featured/?selfcare" alt="Autocuidado">
+  <!-- CARRUSEL -->
+  <section class="relative w-full h-[70vh] overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="w-full h-full">
+        <img id="carousel-img" src="img/carrusel1.jpg" alt="Cosmética y maquillaje" class="w-full h-full object-cover transition duration-700">
+      </div>
     </div>
-    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4">Belleza consciente y personalizada en Bilbao</h1>
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-6">Belleza auténtica, a tu manera</h1>
     </div>
   </section>
 
   <script>
+    const images = ["img/carrusel1.jpg", "img/carrusel2.jpg", "img/carrusel3.jpg", "img/carrusel4.jpg"];
     let index = 0;
-    const carousel = document.getElementById('carousel');
     setInterval(() => {
-      index = (index + 1) % 4;
-      carousel.style.transform = `translateX(-${index * 100}%)`;
+      index = (index + 1) % images.length;
+      document.getElementById('carousel-img').src = images[index];
     }, 4000);
   </script>
 
-  <!-- NOSOTRAS -->
-  <section id="nosotras" class="py-12 px-6 md:px-20 bg-white">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="https://source.unsplash.com/featured/?women-beauty" alt="Nuestro equipo" class="rounded-lg shadow">
-      <div>
-        <h2 class="text-2xl font-bold text-pink-700 mb-4">Quiénes somos</h2>
-        <p class="text-sm text-gray-700">En NekNek creemos que la belleza es salud, autoestima y libertad. Somos un equipo de profesionales en Bilbao dedicado a la cosmética ética, libre de modas y enfocada en el bienestar personal. Acompañamos a cada persona a descubrir lo que la hace sentir bien de forma natural, respetuosa y única.</p>
-      </div>
-    </div>
+  <!-- FOTO PRINCIPAL Y SECCIÓN INTRO -->
+  <section class="py-12 px-6 md:px-20 text-center">
+    <img src="img/mujeres-diversas.jpg" alt="Mujeres de diferentes edades y etnias" class="w-full rounded-lg shadow mb-8">
+    <h2 class="text-2xl font-semibold text-purple-700 mb-4">Belleza para todas, sin etiquetas</h2>
+    <p class="text-sm max-w-3xl mx-auto">En NekNek celebramos la diversidad real. Creamos una experiencia de belleza que se adapta a ti, sea cual sea tu edad, estilo o tipo de piel. Te ayudamos a conocer mejor los productos, técnicas y rutinas que potencian lo mejor de ti.</p>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-12 px-6 md:px-20 bg-pink-100">
-    <h2 class="text-2xl font-bold text-pink-800 text-center mb-8">Nuestros servicios</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-lg font-semibold">Diagnóstico de piel</h3>
-        <p class="text-sm text-gray-700">Análisis personalizado para conocer las necesidades reales de tu piel y recomendarte los productos más adecuados.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-lg font-semibold">Rutinas personalizadas</h3>
-        <p class="text-sm text-gray-700">Diseñamos rutinas únicas según tu estilo de vida, preferencias y objetivos, usando solo cosmética consciente.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-lg font-semibold">Talleres y formaciones</h3>
-        <p class="text-sm text-gray-700">Sesiones grupales o privadas para aprender sobre cosmética natural, hábitos saludables y bienestar emocional.</p>
-      </div>
-    </div>
+  <!-- SECCIONES DETALLADAS -->
+  <section id="rostro" class="py-10 px-6 md:px-20 bg-white">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Cuidado del rostro</h3>
+    <p class="text-sm mb-4">Descubre cómo cuidar tu rostro según tus necesidades: hidratación, limpieza, protección solar y más. Consejos prácticos y productos que realmente funcionan.</p>
+    <img src="img/rostro.jpg" alt="Rutina facial" class="rounded-lg shadow w-full">
   </section>
 
-  <!-- TIENDA -->
-  <section id="tienda" class="py-12 px-6 md:px-20 bg-white">
-    <h2 class="text-2xl font-bold text-pink-700 text-center mb-6">Explora nuestra tienda</h2>
-    <p class="text-sm text-gray-600 text-center mb-10">Productos veganos, cruelty free y ecológicos para cuidar tu piel como se merece.</p>
+  <section id="cuerpo" class="py-10 px-6 md:px-20 bg-yellow-100">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Bienestar corporal</h3>
+    <p class="text-sm mb-4">La piel del cuerpo también necesita atención. Exfoliación, hidratación y cuidados específicos para zonas sensibles o secas.</p>
+    <img src="img/cuerpo.jpg" alt="Cosmética corporal" class="rounded-lg shadow w-full">
+  </section>
+
+  <section id="piel" class="py-10 px-6 md:px-20 bg-white">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">¿Qué tipo de piel tienes?</h3>
+    <p class="text-sm mb-4">Te ayudamos a identificar tu tipo de piel: seca, grasa, mixta o sensible. Conocerla es el primer paso para cuidarla bien.</p>
+    <img src="img/tipo-piel.jpg" alt="Tipos de piel" class="rounded-lg shadow w-full">
+  </section>
+
+  <section id="glosario" class="py-10 px-6 md:px-20 bg-yellow-50">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Glosario de belleza</h3>
+    <p class="text-sm">¿No sabes qué significa "ácido hialurónico" o "retinol"? Consulta nuestro glosario y aclara todos tus términos de cosmética.</p>
+  </section>
+
+  <section id="productos" class="py-10 px-6 md:px-20 bg-white">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Nuestros productos recomendados</h3>
+    <p class="text-sm mb-4">Reunimos una selección de productos efectivos y seguros, cuidadosamente elegidos por su eficacia y calidad.</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <img src="https://source.unsplash.com/featured/?organic-cosmetics" alt="Cosmético 1" class="rounded shadow">
-      <img src="https://source.unsplash.com/featured/?vegan-skincare" alt="Cosmético 2" class="rounded shadow">
-      <img src="https://source.unsplash.com/featured/?serum" alt="Cosmético 3" class="rounded shadow">
-      <img src="https://source.unsplash.com/featured/?natural-beauty" alt="Cosmético 4" class="rounded shadow">
+      <img src="img/producto1.jpg" alt="Producto 1" class="rounded-lg shadow">
+      <img src="img/producto2.jpg" alt="Producto 2" class="rounded-lg shadow">
+      <img src="img/producto3.jpg" alt="Producto 3" class="rounded-lg shadow">
+      <img src="img/producto4.jpg" alt="Producto 4" class="rounded-lg shadow">
+    </div>
+  </section>
+
+  <section id="tips" class="py-10 px-6 md:px-20 bg-yellow-100">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Tips de belleza diaria</h3>
+    <p class="text-sm">Trucos y hábitos simples que marcan la diferencia: cómo aplicar el maquillaje, cuándo usar mascarillas, y qué evitar en tu rutina.</p>
+  </section>
+
+  <section id="asesoria" class="py-10 px-6 md:px-20 bg-white">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Asesoramiento personalizado</h3>
+    <p class="text-sm">No estás sola. Nuestro equipo está aquí para ayudarte a encontrar la rutina y los productos ideales para ti. Escríbenos y resolveremos tus dudas.</p>
+  </section>
+
+  <section id="redes" class="py-10 px-6 md:px-20 bg-yellow-50">
+    <h3 class="text-xl font-bold text-purple-700 mb-4">Síguenos en redes sociales</h3>
+    <p class="text-sm mb-4">Únete a nuestra comunidad. Compartimos rutinas, ideas reales, tutoriales y contenido hecho para ti.</p>
+    <div class="flex justify-center space-x-4">
+      <a href="#" class="text-purple-700 hover:text-yellow-600">Instagram</a>
+      <a href="#" class="text-purple-700 hover:text-yellow-600">TikTok</a>
+      <a href="#" class="text-purple-700 hover:text-yellow-600">YouTube</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-pink-300 text-pink-900 text-sm py-8 px-4 mt-12">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
-      <div>
-        <h4 class="font-semibold mb-2">NekNek</h4>
-        <p>Belleza ética y personal. Cuidamos tu piel y tu bienestar con productos y asesoría consciente en Bilbao.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Enlaces útiles</h4>
-        <ul class="space-y-1">
-          <li><a href="#nosotras" class="hover:underline">Nosotras</a></li>
-          <li><a href="#servicios" class="hover:underline">Servicios</a></li>
-          <li><a href="#tienda" class="hover:underline">Tienda</a></li>
-          <li><a href="#blog" class="hover:underline">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Contacto</h4>
-        <p>Email: info@neknek.com</p>
-        <p>Teléfono: +34 600 123 456</p>
-        <p>Bilbao, España</p>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Síguenos</h4>
-        <p>Instagram | Facebook | TikTok</p>
-      </div>
+  <footer class="bg-purple-100 text-sm text-center text-gray-700 py-6">
+    <p>© 2025 NekNek · Belleza auténtica y cercana</p>
+    <div class="space-x-3 mt-2">
+      <a href="#" class="underline">Aviso legal</a>
+      <a href="#" class="underline">Política de privacidad</a>
+      <a href="#" class="underline">Mapa del sitio</a>
     </div>
-    <div class="text-center mt-6">© 2025 NekNek. Todos los derechos reservados.</div>
   </footer>
 
 </body>
