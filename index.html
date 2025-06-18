@@ -2,75 +2,139 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NekNek | Belleza consciente y personalizada en Bilbao</title>
-  <meta name="description" content="NekNek ofrece asesoría personalizada por videollamada y cosmética para todo tipo de piel en España (excepto Canarias). Belleza real, sin modas y adaptada a ti." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NekNek | Asesoramiento de Belleza y Cosmética Personalizada</title>
+  <meta name="description" content="Descubre tu belleza única con NekNek. Asesoramiento personalizado por videollamada para toda España y envío de productos de cosmética de alta calidad (excepto Islas Canarias). Vive el maquillaje sin modas, a tu manera. Contenido SEO optimizado para Rostro, Cuerpo, Tipos de Piel, Maquillaje y más." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Colores y fuentes base */
     body {
       font-family: 'Inter', sans-serif;
-      background: #FFF8F0;
-      color: #4B0082; /* morado fuerte */
+      background: #FFF8F0; /* Fondo crema suave para contraste */
+      color: #4B0082; /* Morado fuerte para el texto principal */
       margin: 0;
+      line-height: 1.7; /* Mejor legibilidad */
     }
+
+    /* Estilos del encabezado */
     header {
-      background: #6A0DAD; /* morado fuerte */
-      padding: 1rem 2rem;
+      background: #6A0DAD; /* Morado fuerte para el header */
+      padding: 1.5rem 2rem; /* Más padding para que se vea más robusto */
       display: flex;
       justify-content: center;
+      position: relative; /* Para posicionar el logo dentro del flujo pero en la esquina */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra sutil */
     }
+
+    /* Navegación */
     nav {
       display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
+      gap: 1.5rem; /* Menos espacio entre tabs para más elementos */
+      flex-wrap: wrap; /* Permitir que las pestañas se envuelvan en pantallas pequeñas */
       justify-content: center;
       align-items: center;
-      max-width: 1200px;
+      max-width: 1300px; /* Ancho máximo para la navegación */
       width: 100%;
     }
+
     nav a {
-      color: #FFD54F; /* mostaza fuerte */
+      color: #FFD54F; /* Amarillo mostaza fuerte para los enlaces */
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem; /* Tamaño de fuente ligeramente más pequeño para acomodar 9 pestañas */
       text-decoration: none;
       text-transform: uppercase;
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 0.6rem 0.9rem; /* Ajustar padding */
+      border-radius: 9999px; /* Botones más redondeados */
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      overflow: hidden; /* Para el efecto hover */
     }
-    nav a:hover, nav a:focus {
-      background-color: #FF6F00; /* naranja */
-      color: #FFF8F0;
-      outline: none;
-    }
-    .logo {
+
+    nav a:before { /* Efecto para el hover */
+      content: '';
       position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #FF6F00; /* Naranja para el hover */
+      transition: left 0.3s ease;
+      z-index: 0;
+      border-radius: 9999px;
+    }
+
+    nav a:hover:before {
+      left: 0;
+    }
+
+    nav a span { /* Para que el texto quede por encima del efecto */
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a:hover, nav a:focus {
+      color: #FFF8F0; /* Texto crema en hover */
+      outline: none;
+      transform: translateY(-2px); /* Pequeño efecto de elevación */
+    }
+
+    /* Logo */
+    .logo {
+      position: absolute; /* Para que el logo esté en la esquina */
       left: 2rem;
-      top: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #FFD54F;
+      color: #FFD54F; /* Amarillo mostaza para el logo */
       font-weight: 700;
       font-size: 1.8rem;
       user-select: none;
+      z-index: 10; /* Asegurar que el logo esté por encima de todo */
     }
+
     .logo img {
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 50px; /* Tamaño un poco más grande */
+      height: 50px;
+      object-fit: cover;
+      border: 3px solid #FFD54F; /* Borde para el logo */
     }
+
+    /* Media queries para el logo en pantallas pequeñas */
+    @media (max-width: 768px) {
+      .logo {
+        position: static; /* Volver a la posición normal en pantallas pequeñas */
+        transform: none;
+        margin-bottom: 1rem;
+        justify-content: center;
+        width: 100%;
+      }
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+      }
+      nav {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+
+
     /* Carousel */
     .carousel-container {
       position: relative;
       overflow: hidden;
-      height: 60vh;
-      max-height: 450px;
-      max-width: 1200px;
-      margin: 2rem auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(255,111,0,0.3);
+      height: 60vh; /* Altura adaptable */
+      max-height: 550px; /* Altura máxima del carrusel */
+      max-width: 1400px; /* Ancho máximo para el carrusel */
+      margin: 2.5rem auto;
+      border-radius: 16px; /* Más redondeado */
+      box-shadow: 0 15px 30px rgba(106,13,173,0.3); /* Sombra con color morado */
+      border: 4px solid #FF6F00; /* Borde naranja */
     }
     .carousel-slide {
       display: flex;
@@ -87,126 +151,466 @@
     .carousel-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(106, 13, 173, 0.5); /* semitransparente morado */
+      background: rgba(106, 13, 173, 0.6); /* Morado semitransparente para el overlay */
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 1rem;
-      border-radius: 12px;
+      padding: 0 2rem;
+      border-radius: 16px;
+      user-select: none;
     }
     .carousel-overlay h1 {
-      color: #FFD54F; /* mostaza */
-      font-size: 2.75rem;
-      font-weight: 700;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-      user-select: none;
+      color: #FFD54F; /* Mostaza para el título principal */
+      font-size: 3.25rem; /* Más grande */
+      font-weight: 800; /* Más audaz */
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra más pronunciada */
+      margin-bottom: 1rem;
     }
+    .carousel-overlay p {
+      color: #FFF8F0; /* Crema para el subtítulo */
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      max-width: 800px;
+    }
+
+    /* Secciones de Contenido */
     section {
-      padding: 3rem 1rem;
+      padding: 4rem 1.5rem; /* Más padding para las secciones */
       max-width: 1200px;
       margin: auto;
+      border-bottom: 1px dashed rgba(106,13,173,0.3); /* Línea divisoria suave */
     }
+    section:last-of-type {
+      border-bottom: none; /* No hay línea en la última sección */
+    }
+
     .section-title {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #6A0DAD;
+      font-size: 2.5rem; /* Títulos de sección más grandes */
+      font-weight: 800;
+      margin-bottom: 2rem;
+      color: #6A0DAD; /* Morado fuerte para los títulos */
       text-align: center;
       user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+    .section-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #FF6F00; /* Naranja para subtítulos */
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
     .grid-2cols {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas más anchas */
+      gap: 3rem; /* Más espacio entre columnas */
       align-items: center;
     }
+    .grid-2cols img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(255,111,0,0.2); /* Sombra naranja para imágenes */
+    }
+
     .rounded-shadow {
       border-radius: 16px;
       box-shadow: 0 10px 20px rgba(255,111,0,0.3);
       user-select: none;
     }
+
+    .text-content p {
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+        color: #4B0082;
+    }
+
     .btn-primary {
-      background-color: #FF6F00;
-      color: #FFF8F0;
-      padding: 0.85rem 2.5rem;
+      background-color: #FF6F00; /* Naranja para el botón primario */
+      color: #FFF8F0; /* Texto crema */
+      padding: 1rem 3rem; /* Botón más grande */
       font-weight: 700;
       border-radius: 9999px;
       display: inline-block;
       text-align: center;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
       cursor: pointer;
-      margin-top: 1.25rem;
+      margin-top: 2rem; /* Más margen superior */
       user-select: none;
       border: none;
-      font-size: 1.1rem;
+      font-size: 1.2rem; /* Fuente más grande para el botón */
+      box-shadow: 0 5px 15px rgba(255,111,0,0.4);
     }
     .btn-primary:hover, .btn-primary:focus {
-      background-color: #6A0DAD;
+      background-color: #6A0DAD; /* Morado en hover */
+      transform: translateY(-3px); /* Efecto de elevación */
       outline: none;
     }
-    footer {
-      background: #FF6F00;
-      color: #FFF8F0;
-      padding: 2rem 1rem;
-      user-select: none;
+
+    /* Secciones legales */
+    .legal-section {
+        background-color: #FFD54F; /* Mostaza para secciones legales */
+        padding: 3rem 1.5rem;
+        border-radius: 16px;
+        margin: 2rem auto;
+        color: #4B0082;
+        box-shadow: 0 10px 20px rgba(106,13,173,0.2);
     }
-    footer a {
-      color: #FFF8F0;
-      text-decoration: underline;
-      transition: color 0.3s ease;
+    .legal-section h2 {
+        color: #6A0DAD;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
     }
-    footer a:hover, footer a:focus {
-      color: #FFD54F;
-      outline: none;
+    .legal-section h3 {
+        color: #FF6F00;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
     }
+    .legal-section p, .legal-section ul {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .legal-section ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
     /* Extra Section: Vivir maquillaje sin modas */
     .live-makeup {
-      background: linear-gradient(90deg, #6A0DAD 0%, #FF6F00 100%);
+      background: linear-gradient(90deg, #6A0DAD 0%, #FF6F00 100%); /* Gradiente morado a naranja */
       color: #FFF8F0;
-      padding: 3rem 1rem;
+      padding: 4rem 2rem;
       text-align: center;
-      border-radius: 16px;
-      margin: 3rem auto;
-      max-width: 900px;
-      font-size: 1.25rem;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(255,111,0,0.6);
+      border-radius: 20px; /* Más redondeado */
+      margin: 4rem auto;
+      max-width: 1000px;
+      font-size: 1.4rem; /* Texto más grande */
+      font-weight: 700;
+      box-shadow: 0 15px 40px rgba(106,13,173,0.7); /* Sombra más fuerte y con morado */
       user-select: none;
+      animation: pulse 2s infinite alternate; /* Animación para resaltar */
     }
     .live-makeup strong {
-      font-size: 1.5rem;
+      font-size: 2rem; /* Título dentro de la sección más grande */
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    }
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+        box-shadow: 0 15px 40px rgba(106,13,173,0.7);
+      }
+      to {
+        transform: scale(1.02);
+        box-shadow: 0 20px 50px rgba(106,13,173,0.9);
+      }
+    }
+
+
+    /* Footer */
+    footer {
+      background: #FF6F00; /* Naranja para el footer */
+      color: #FFF8F0; /* Texto crema */
+      padding: 3rem 1.5rem;
+      user-select: none;
+      text-align: center;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    }
+    footer a {
+      color: #FFD54F; /* Mostaza para los enlaces del footer */
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+    footer a:hover, footer a:focus {
+      color: #FFF8F0; /* Crema en hover */
+      outline: none;
+      text-decoration: underline;
+    }
+    .footer-links {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .footer-text {
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        .carousel-overlay h1 {
+            font-size: 2.5rem;
+        }
+        .carousel-overlay p {
+            font-size: 1.2rem;
+        }
+        .section-title {
+            font-size: 2rem;
+        }
+        .live-makeup {
+            font-size: 1.2rem;
+            padding: 3rem 1.5rem;
+        }
+        .live-makeup strong {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        nav a {
+            width: 100%;
+            text-align: center;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.75rem;
+        }
+        .carousel-container {
+            height: 40vh;
+            margin: 1.5rem auto;
+        }
+        .carousel-overlay h1 {
+            font-size: 2rem;
+        }
+        .carousel-overlay p {
+            font-size: 1rem;
+        }
+        section {
+            padding: 2.5rem 1rem;
+        }
+        .section-title {
+            font-size: 1.8rem;
+        }
+        .grid-2cols {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+        }
+        .live-makeup {
+            font-size: 1.1rem;
+            padding: 2.5rem 1rem;
+        }
+        .live-makeup strong {
+            font-size: 1.6rem;
+        }
+        .legal-section {
+            padding: 2rem 1rem;
+        }
+        .legal-section h2 {
+            font-size: 1.8rem;
+        }
+        .legal-section h3 {
+            font-size: 1.3rem;
+        }
+        footer {
+            padding: 2rem 1rem;
+        }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo fuera del nav para mejor control -->
-  <div class="logo" aria-label="Logo NekNek">
-    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=48&q=80" alt="Logo NekNek" />
+  <!-- Logo fuera del nav para mejor control y flexibilidad de posicionamiento -->
+  <div class="logo" aria-label="Logo NekNek, regresa al inicio de la página">
+    <img src="https://placehold.co/50x50/6A0DAD/FFD54F?text=N" alt="Logo de NekNek, una 'N' estilizada sobre fondo morado" />
     NekNek
   </div>
 
-  <!-- HEADER con 8 pestañas centradas -->
-  <header role="banner" aria-label="Navegación principal">
-    <nav role="navigation" aria-label="Menú principal">
-      <a href="#rostro" tabindex="0">Rostro</a>
-      <a href="#cuerpo" tabindex="0">Cuerpo</a>
-      <a href="#tipos-piel" tabindex="0">Tipos de piel</a>
-      <a href="#glosario" tabindex="0">Glosario</a>
-      <a href="#productos" tabindex="0">Productos</a>
-      <a href="#tips-belleza" tabindex="0">Tips belleza</a>
-      <a href="#asesoramiento" tabindex="0">Asesoramiento</a>
-      <a href="#redes-sociales" tabindex="0">Redes sociales</a>
+  <!-- HEADER con 9 pestañas centradas -->
+  <header role="banner" aria-label="Navegación principal del sitio web NekNek">
+    <nav role="navigation" aria-label="Menú principal de navegación">
+      <a href="#rostro" tabindex="0"><span>Rostro</span></a>
+      <a href="#cuerpo" tabindex="0"><span>Cuerpo</span></a>
+      <a href="#tipos-piel" tabindex="0"><span>Tipos de Piel</span></a>
+      <a href="#maquillaje" tabindex="0"><span>Maquillaje</span></a>
+      <a href="#glosario" tabindex="0"><span>Glosario</span></a>
+      <a href="#productos" tabindex="0"><span>Productos</span></a>
+      <a href="#tips-belleza" tabindex="0"><span>Tips Belleza</span></a>
+      <a href="#asesoramiento" tabindex="0"><span>Asesoramiento</span></a>
+      <a href="#redes-sociales" tabindex="0"><span>Redes Sociales</span></a>
     </nav>
   </header>
 
-  <!-- CAROUSEL automático con 4 fotos -->
-  <section class="carousel-container" aria-label="Carrusel de imágenes de cosmética y maquillaje">
+  <!-- CAROUSEL automático con 4 fotos de cosmética y un mensaje principal -->
+  <section class="carousel-container" aria-label="Carrusel de imágenes inspiradoras de cosmética y maquillaje con mensaje principal">
     <div id="carousel" class="carousel-slide" aria-live="polite" aria-atomic="true">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Maquillaje profesional sobre mesa" />
-      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Cosméticos variados sobre fondo colorido" />
-      <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80" alt="Mujer aplicándose crema facial" />
-      <
+      <!-- Imágenes de cosmética y maquillaje -->
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Vista superior de brochas y paletas de maquillaje profesional sobre una superficie blanca, sugiriendo creatividad y preparación." />
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Diversos productos cosméticos como labiales, cremas y polvos de colores vibrantes dispuestos artísticamente sobre un fondo degradado, simbolizando variedad y autoexpresión." />
+      <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Primer plano de una mujer aplicándose suavemente crema hidratante en el rostro, destacando el cuidado personal y la rutina de belleza diaria." />
+      <img src="https://images.unsplash.com/photo-1620723467657-3a137b0d5c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Variedad de botellas y envases de productos de cuidado de la piel con un fondo suave y minimalista, transmitiendo pureza y eficacia." />
+    </div>
+    <div class="carousel-overlay">
+      <h1>Descubre tu Belleza. A tu Manera.</h1>
+      <p>En NekNek, creemos en una belleza auténtica y personalizada. Te acompañamos para que encuentres los productos y rutinas ideales para ti.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRINCIPAL: Quiénes Somos / Misión (con foto principal de mujeres diversas) -->
+  <section id="quienes-somos" class="grid-2cols">
+    <div class="text-content">
+      <h2 class="section-title">Tu Belleza, Nuestra Pasión</h2>
+      <p>En NekNek, celebramos la diversidad y la individualidad. Creemos firmemente que la belleza es un reflejo de quién eres, y no de lo que dictan las tendencias. Nuestro compromiso es ofrecerte un espacio donde puedas explorar el mundo de la cosmética y el maquillaje de una manera informada, divertida y completamente adaptada a tus necesidades únicas.</p>
+      <p>Te acompañamos en cada paso, desde la identificación de tu tipo de piel hasta la selección de los productos perfectos que realcen tu esencia. Con un enfoque en la personalización, te ayudamos a construir una rutina de belleza que te haga sentir segura y radiante, siempre respetando tu estilo y preferencias.</p>
+      <a href="#asesoramiento" class="btn-primary">¡Empieza tu Asesoramiento!</a>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1596495578051-a20c3a6e877e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Un grupo diverso de mujeres de diferentes edades y etnias sonríen y se apoyan mutuamente, transmitiendo un mensaje de inclusión y empoderamiento en la belleza." class="rounded-shadow" />
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Rostro -->
+  <section id="rostro">
+    <h2 class="section-title">Cuidado del Rostro: La Base de tu Belleza</h2>
+    <div class="grid-2cols">
+      <div>
+        <img src="https://images.unsplash.com/photo-1555513809-b4f0b240b9c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Una mujer sonriente con piel radiante y bien cuidada, destacando la importancia de una rutina de cuidado facial efectiva." class="rounded-shadow" />
+      </div>
+      <div class="text-content">
+        <p>El cuidado facial es la piedra angular de una piel sana y luminosa. Comprender las necesidades de tu rostro es el primer paso para lucir una piel radiante. En NekNek, te guiamos a través de los esenciales: limpieza profunda, tonificación equilibrante, hidratación intensiva y protección solar imprescindible. Cada paso es crucial para mantener la barrera cutánea fuerte y proteger tu piel de los factores externos.</p>
+        <p>Desde sérums concentrados que abordan preocupaciones específicas como el envejecimiento o la pigmentación, hasta cremas nutritivas que restauran la vitalidad, te ayudamos a seleccionar los productos que mejor se adapten a tu tipo de piel y a tus objetivos. Una rutina facial personalizada no solo mejora la apariencia, sino que también contribuye a la salud a largo plazo de tu piel.</p>
+        <p>Aprende a identificar las señales que tu piel te envía y responde con el cuidado que merece. Un rostro bien cuidado es un reflejo de bienestar y confianza.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Cuerpo -->
+  <section id="cuerpo">
+    <h2 class="section-title">Cuidado del Cuerpo: Piel Radiante de Pies a Cabeza</h2>
+    <div class="grid-2cols">
+      <div class="text-content">
+        <p>El cuidado de la piel de tu cuerpo es tan importante como el de tu rostro. Es la superficie más grande de tu cuerpo y requiere atención para mantenerse suave, hidratada y protegida. En NekNek, enfatizamos la importancia de una rutina corporal completa que incluya exfoliación regular para eliminar células muertas, hidratación profunda para mantener la elasticidad y protección contra agentes externos que puedan dañarla.</p>
+        <p>Explora nuestra selección de lociones corporales, aceites nutritivos y cremas reafirmantes diseñadas para distintas necesidades. Ya sea que busques combatir la sequedad, mejorar la firmeza o simplemente disfrutar de una piel sedosa, te ofrecemos las mejores opciones. Los productos adecuados no solo nutren tu piel, sino que también te brindan momentos de autocuidado y relajación.</p>
+        <p>Dedicar tiempo al cuidado de tu cuerpo no es solo una cuestión estética; es una inversión en tu bienestar general. Una piel sana y bien cuidada te proporciona una sensación de confort y confianza en tu día a día.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1590489569062-ee23b6b80261?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Detalle de una mano aplicando una crema hidratante en la pierna, mostrando la textura de la crema y la piel suave." class="rounded-shadow" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Tipos de Piel -->
+  <section id="tipos-piel">
+    <h2 class="section-title">Conoce tu Piel: Identifica tu Tipo para un Cuidado Óptimo</h2>
+    <div class="grid-2cols">
+      <div>
+        <img src="https://images.unsplash.com/photo-1571408899887-f27303e481b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Una persona tocándose suavemente la mejilla, con enfoque en la textura de la piel y un brillo saludable, ilustrando los diferentes tipos de piel." class="rounded-shadow" />
+      </div>
+      <div class="text-content">
+        <p>Identificar tu tipo de piel es el punto de partida fundamental para cualquier rutina de belleza efectiva. La piel de cada persona es única y reacciona de manera diferente a los productos y al entorno. En NekNek, te ayudamos a distinguir entre los tipos de piel más comunes: normal, seca, grasa, mixta y sensible. Cada uno posee características y necesidades específicas que requieren un enfoque de cuidado particular.</p>
+        <p>Una piel normal se caracteriza por su equilibrio; la piel seca tiende a sentirse tirante y puede presentar descamación; la piel grasa a menudo muestra un brillo excesivo y poros dilatados; la piel mixta combina zonas grasas y secas; y la piel sensible es propensa a irritaciones y enrojecimiento. Comprender estas diferencias te permitirá elegir productos formulados para maximizar los beneficios y evitar reacciones adversas.</p>
+        <p>Con nuestra guía, aprenderás a observar las señales de tu piel y a ajustar tu rutina para mantenerla en su estado más óptimo. Un diagnóstico preciso te empodera para tomar decisiones inteligentes sobre tu cuidado personal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Maquillaje -->
+  <section id="maquillaje">
+    <h2 class="section-title">Maquillaje: Realza tu Belleza con Creatividad</h2>
+    <div class="grid-2cols">
+      <div class="text-content">
+        <p>El maquillaje es una forma de arte y autoexpresión. Más allá de cubrir imperfecciones, es una herramienta poderosa para realzar tus rasgos, potenciar tu confianza y transformar tu apariencia según tu estado de ánimo o la ocasión. En NekNek, te invitamos a explorar las infinitas posibilidades del maquillaje, desde looks naturales para el día a día hasta estilos más audaces y sofisticados para eventos especiales.</p>
+        <p>Te ofrecemos guías sobre técnicas básicas como la aplicación de bases y correctores, el contorno para definir facciones, y el uso de sombras y delineadores para destacar tus ojos. Además, te mostramos cómo elegir los tonos de labial que complementen tu tono de piel y cómo utilizar el colorete para dar un aspecto saludable. El objetivo es que domines las herramientas para crear el look que desees, sintiéndote cómoda y auténtica.</p>
+        <p>Descubre cómo el maquillaje puede ser un aliado para expresar tu personalidad y celebrar tu individualidad, sin presiones ni estereotipos. Porque el mejor maquillaje es aquel que te hace sentir tú misma.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1512496015869-7c8702b8d0e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Primer plano de una persona aplicando lápiz labial de un tono vibrante, con el enfoque en los labios y la textura del maquillaje." class="rounded-shadow" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Glosario -->
+  <section id="glosario">
+    <h2 class="section-title">Glosario de Belleza: Entiende el Lenguaje de la Cosmética</h2>
+    <div class="text-content">
+      <p>El mundo de la cosmética está lleno de términos específicos que pueden resultar confusos. Para que tomes decisiones informadas y comprendas mejor lo que aplicas en tu piel, hemos creado un glosario completo con las definiciones más importantes. Desde ingredientes activos hasta técnicas de aplicación, este recurso te ayudará a navegar con confianza por el universo de la belleza.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div>
+          <h3 class="section-subtitle">Términos Comunes</h3>
+          <p><strong>Ácido Hialurónico:</strong> Un humectante potente que atrae y retiene hasta 1000 veces su peso en agua, proporcionando hidratación intensa y rellenando la piel.</p>
+          <p><strong>Retinol:</strong> Derivado de la Vitamina A, conocido por sus propiedades antienvejecimiento, ayuda a renovar las células de la piel, reducir arrugas y mejorar la textura.</p>
+          <p><strong>Niacinamida (Vitamina B3):</strong> Ingrediente multifuncional que mejora la función de barrera de la piel, reduce la inflamación, minimiza los poros y unifica el tono.</p>
+          <p><strong>SPF (Factor de Protección Solar):</strong> Medida de la capacidad de un protector solar para proteger la piel de los rayos UVB. Esencial para prevenir el daño solar.</p>
+          <p><strong>Exfoliación:</strong> Proceso de eliminar las células muertas de la superficie de la piel para revelar una piel más suave y luminosa. Puede ser física o química.</p>
+        </div>
+        <div>
+          <h3 class="section-subtitle">Ingredientes y Activos</h3>
+          <p><strong>Péptidos:</strong> Cadenas cortas de aminoácidos que actúan como "mensajeros" en la piel, estimulando la producción de colágeno y elastina.</p>
+          <p><strong>Ceramidas:</strong> Lípidos que se encuentran naturalmente en la piel y son fundamentales para mantener la barrera cutánea sana y protegerla de la pérdida de humedad.</p>
+          <p><strong>Antioxidantes:</strong> Sustancias que protegen las células de la piel del daño causado por los radicales libres, como la Vitamina C y la Vitamina E.</p>
+          <p><strong>AHA (Alfa Hidroxiácidos):</strong> Ácidos solubles en agua que exfolian la superficie de la piel, mejorando el tono y la textura. Ejemplos: ácido glicólico, láctico.</p>
+          <p><strong>BHA (Beta Hidroxiácidos):</strong> Ácidos solubles en aceite que penetran en los poros para limpiarlos y reducir imperfecciones. Ejemplo: ácido salicílico.</p>
+        </div>
+        <div>
+          <h3 class="section-subtitle">Técnicas y Rutinas</h3>
+          <p><strong>Doble Limpieza:</strong> Método de limpieza en dos pasos que usa primero un limpiador a base de aceite y luego uno a base de agua para una limpieza profunda.</p>
+          <p><strong>Contouring (Contorneado):</strong> Técnica de maquillaje que utiliza tonos oscuros y claros para definir y esculpir las facciones del rostro.</p>
+          <p><strong>Highlighting (Iluminación):</strong> Técnica que aplica productos brillantes en puntos altos del rostro para resaltar y dar luminosidad.</p>
+          <p><strong>Layering (Capas):</strong> Aplicación de productos de cuidado de la piel en un orden específico, generalmente de la textura más ligera a la más densa.</p>
+          <p><strong>Parabenos:</strong> Conservantes utilizados en cosméticos. Aunque seguros en bajas concentraciones, algunos prefieren evitarlos.</p>
+        </div>
+      </div>
+      <p class="mt-8">Este glosario es una herramienta viva que se actualizará para que siempre tengas la información más relevante a tu alcance.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Productos -->
+  <section id="productos">
+    <h2 class="section-title">Nuestros Productos: Calidad para Cada Necesidad</h2>
+    <div class="grid-2cols">
+      <div class="text-content">
+        <p>En NekNek, hemos seleccionado cuidadosamente una gama de productos de cosmética de alta calidad, pensados para abordar una amplia variedad de necesidades y tipos de piel. Nuestro catálogo incluye desde soluciones para la limpieza facial y corporal, hasta tratamientos específicos y maquillaje para realzar tu belleza natural. Nos centramos en la eficacia y la seguridad, ofreciendo opciones que se integran perfectamente en tu rutina diaria.</p>
+        <p>Encontrarás productos para hidratar, nutrir, proteger y revitalizar tu piel. Desde limpiadores suaves y tónicos equilibrantes, hasta sérums avanzados con ingredientes activos potentes y cremas hidratantes con texturas variadas. En maquillaje, ofrecemos desde bases de cobertura adaptable y correctores que iluminan, hasta paletas de sombras versátiles y labiales de larga duración.</p>
+        <p>Creemos que la elección de los productos adecuados es fundamental para obtener resultados visibles y duraderos. Por eso, te invitamos a explorar nuestra colección y descubrir aquellos que se conviertan en tus aliados de belleza imprescindibles. Siempre con la tranquilidad de que te ofrecemos solo lo que consideramos lo mejor para ti.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfad6e945c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Una variedad de productos de cosmética en envases elegantes y minimalistas, dispuestos sobre una superficie limpia, sugiriendo pureza y calidad." class="rounded-shadow" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Tips Belleza -->
+  <section id="tips-belleza">
+    <h2 class="section-title">Tips de Belleza: Maximiza tu Rutina</h2>
+    <div class="grid-2cols">
+      <div>
+        <img src="https://images.unsplash.com/photo-1596495578051-a20c3a6e877e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Una mujer diversa sonriendo, con una piel radiante, sugiriendo consejos prácticos para una belleza saludable y feliz." class="rounded-shadow" />
+      </div>
+      <div class="text-content">
+        <p>Aprender pequeños trucos y hábitos puede marcar una gran diferencia en tu rutina de belleza. En NekNek, compartimos contigo consejos prácticos que te ayudarán a optimizar el uso de tus productos y a conseguir los mejores resultados. Desde cómo aplicar correctamente tu sérum hasta la importancia de la hidratación interna, estos tips están diseñados para mejorar tu bienestar general y el aspecto de tu piel.</p>
+        <p>Considera integrar la doble limpieza en tu rutina nocturna para asegurar una eliminación completa de maquillaje e impurezas. No olvides la importancia de aplicar protector solar a diario, incluso en días nublados, para proteger tu piel del envejecimiento prematuro. Otro tip clave es ser constante: los resultados del cuidado de la piel se construyen con la disciplina y el uso regular de los productos adecuados.</p>
+        <p>Además, te animamos a escuchar a tu piel. Si notas alguna reacción adversa, es importante identificar la causa y ajustar tus productos. Recuerda que la belleza también viene de dentro, por lo que una alimentación equilibrada, suficiente descanso y una buena gestión del estrés también son fundamentales para una piel sana y radiante.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Asesoramiento Personalizado -->
+  <section id="asesoramiento">
+    <h2 class="section-title">Asesoramiento Personalizado por Videollamada</h2>
+    <div class="grid-2cols">
+      <div class="text-content">
+        <p>En NekNek, llevamos el asesoramiento de belleza directamente a tu hogar, sin importar dónde te encuentres en España. Nuestro servicio de asesoramiento personalizado por videollamada te permite conectar con expertas en cosmética y maquillaje desde la comodidad de tu espacio. Recibe recomendaciones exclusivas, resuelve tus dudas y diseña una rutina de belleza adaptada a ti, estés donde estés.</p>
+        <p>Te ofrecemos sesiones uno a uno donde analizaremos tu tipo de piel, tus preocupaciones específicas y tus objetivos de belleza. Juntas, construiremos un plan de cuidado facial y/o corporal, te guiaremos en la elección de productos y te daremos trucos de maquillaje que te empoderen. Nuestro compromiso es brindarte un servicio de proximidad y calidad, aprovechando la tecnología para acercarnos a ti.</p>
+        <p>Además, una vez finalizada tu sesión de asesoramiento, podrás adquirir los productos recomendados directamente desde nuestra web. Realizamos envíos a cualquier parte de España, garantizando que recibas tus productos de forma rápida y segura en la puerta de tu casa. <strong>Nota importante: actualmente no realizamos envíos a las Islas Canarias.</strong></p>
+        <a href="mailto:info@neknek.es" class="btn-primary">Agenda tu Asesoramiento</a>
+      </div>
+      <div>
+        <img sr
