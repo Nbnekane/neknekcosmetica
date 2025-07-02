@@ -1,0 +1,52 @@
+{
+  "name": "NekNek Cosmética: Belleza Personalizada",
+  "short_name": "NekNek",
+  "description": "Descubre tu belleza única con NekNek. Asesoramiento personalizado, productos de cosmética de alta calidad y una filosofía de maquillaje sin modas, a tu manera.",
+  "lang": "es-ES",
+  "start_url": "/neknekcosmetica/index.html",
+  "scope": "/neknekcosmetica/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFF8F0",
+  "theme_color": "#6A0DAD",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/6A0DAD/FFD54F?text=N",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/512x512/6A0DAD/FFD54F?text=N",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/192x192/6A0DAD/FFD54F?text=N",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://placehold.co/512x512/6A0DAD/FFD54F?text=N",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://i.imgur.com/8i2hY3k.png",
+      "type": "image/png",
+      "sizes": "1280x738",
+      "label": "Página de Inicio de NekNek Cosmética"
+    }
+  ],
+  "categories": [
+    "beauty",
+    "lifestyle",
+    "shopping"
+  ],
+  "prefer_related_applications": false
+}
